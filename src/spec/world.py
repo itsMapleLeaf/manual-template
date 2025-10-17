@@ -35,7 +35,8 @@ class WorldSpec:
         self, name: str, starting_count: int | None = None, **args: Unpack[ItemArgs]
     ) -> ItemData:
         if starting_count != None:
-            self.game.setdefault("starting_items", []).append(
+            self.game['starting_items'] = self.game.get('starting_items') or []
+            self.game['starting_items'].append(
                 {"items": [name], "random": starting_count},
             )
 
@@ -50,7 +51,8 @@ class WorldSpec:
         self, name: str, starting_count: int | None = None, **args: Unpack[CategoryData]
     ) -> tuple[str, CategoryData]:
         if starting_count != None:
-            self.game.setdefault("starting_items", []).append(
+            self.game['starting_items'] = self.game.get('starting_items') or []
+            self.game['starting_items'].append(
                 {"item_categories": [name], "random": starting_count},
             )
 
