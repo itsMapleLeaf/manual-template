@@ -1,13 +1,16 @@
 from ..lib.world import WorldSpec
 
 
-def __define_world_spec() -> WorldSpec:
-    spec = WorldSpec()
+class TemplateWorldSpec(WorldSpec):
+    def __init__(self):
+        super().__init__(
+            game="YourGameName",
+            creator="YourName",
+            filler_item_name="Useless Filler Item",
+        )
 
-    spec.define_item("Test Item")
-    spec.define_location("Test Location")
-
-    return spec
+        self.define_item("Test Item")
+        self.define_location("Test Location")
 
 
-spec = __define_world_spec()
+spec = TemplateWorldSpec()
