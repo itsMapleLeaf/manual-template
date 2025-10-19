@@ -13,4 +13,4 @@ class TemplateWorldSpec(WorldSpec):
         self.define_location("Test Location")
 
 
-spec = TemplateWorldSpec()
+world_spec = TemplateWorldSpec()
