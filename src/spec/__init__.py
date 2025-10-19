@@ -1,4 +1,4 @@
-from .world import WorldSpec
+from ..lib.world import WorldSpec
 
 
 def __define_world_spec() -> WorldSpec:

@@ -1,23 +1,21 @@
 from typing import Unpack
 
-from .types import (
-    CategoryData,
+from .meta import MetaData
+from .options import (
     ChoiceOptionArgs,
     ChoiceOptionData,
     CoreOptionData,
-    GameData,
-    ItemArgs,
-    ItemData,
-    LocationArgs,
-    LocationData,
-    MetaData,
     RangeOptionArgs,
     RangeOptionData,
-    RegionData,
     ToggleOptionArgs,
     ToggleOptionData,
     UserOptionData,
 )
+from .region import RegionData
+from .category import CategoryData
+from .game import GameData
+from .location import LocationData, LocationArgs
+from .item import ItemData, ItemArgs
 
 
 class WorldSpec:
@@ -35,8 +33,8 @@ class WorldSpec:
         self, name: str, starting_count: int | None = None, **args: Unpack[ItemArgs]
     ) -> ItemData:
         if starting_count != None:
-            self.game['starting_items'] = self.game.get('starting_items') or []
-            self.game['starting_items'].append(
+            self.game["starting_items"] = self.game.get("starting_items") or []
+            self.game["starting_items"].append(
                 {"items": [name], "random": starting_count},
             )
 
@@ -51,8 +49,8 @@ class WorldSpec:
         self, name: str, starting_count: int | None = None, **args: Unpack[CategoryData]
     ) -> tuple[str, CategoryData]:
         if starting_count != None:
-            self.game['starting_items'] = self.game.get('starting_items') or []
-            self.game['starting_items'].append(
+            self.game["starting_items"] = self.game.get("starting_items") or []
+            self.game["starting_items"].append(
                 {"item_categories": [name], "random": starting_count},
             )
 
