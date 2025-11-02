@@ -1,6 +1,5 @@
 from typing import Literal
-from .types import CategoryData, ItemData
-
+from .item import ItemData
 
 class Requires:
     type Amount = int | str | Literal["all"] | Literal["half"]
