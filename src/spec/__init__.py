@@ -1,7 +1,7 @@
-from ..lib.world import WorldSpec
+from .lib import world
 
 
-class TemplateWorldSpec(WorldSpec):
+class TemplateWorldSpec(world.WorldSpec):
     def __init__(self):
         super().__init__(
             game="YourGameName",
